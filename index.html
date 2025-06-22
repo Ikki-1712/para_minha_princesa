@@ -40,12 +40,17 @@
       height: 100%;
       background: url('https://i.postimg.cc/FFyZNgzw/meamor.jpg') repeat;
       z-index: -1;
-      animation: moveStars 60s linear infinite;
+      animation: movefotodela 60s linear infinite;
     }
 
-    @keyframes moveStars {
-      0% { background-position: 0 0; }
-      100% { background-position: 1000px 1000px; }
+    @keyframes movefotodela {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 1000px 1000px;
+      }
     }
 
     .music-controls {
@@ -91,6 +96,19 @@
       border-radius: 15px 15px 0 0;
     }
 
+    .flap .hint {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 1rem;
+      color: #fff;
+      pointer-events: none;
+    }
+
     .seal {
       position: absolute;
       bottom: -15px;
@@ -131,14 +149,26 @@
       pointer-events: auto;
     }
 
+    .envelope.opened .flap .hint {
+      display: none;
+    }
+
     .music-controls.moved-up {
       transform: translateY(-120px);
     }
 
     @media (max-width: 480px) {
-      h1 { font-size: 1.5rem; }
-      p { font-size: 0.9rem; }
-      .envelope { width: 90%; }
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      .envelope {
+        width: 90%;
+      }
     }
   </style>
 </head>
@@ -157,19 +187,32 @@
   <div class="envelope" id="envelope" onclick="toggleLetter()">
     <div class="flap" id="flap">
       <img src="https://down-br.img.susercontent.com/file/cn-11134207-7ras8-m13wg4ile2nfc1_tn" alt="Lobinho fofo">
+      <div class="hint">Clique no Bachira 🐺</div>
       <div class="seal">💙</div>
     </div>
     <div class="content" id="letterContent">
       <h1>Para a Princesa do meu coração</h1>
       <p>
-        Eu fiz mais esta cartinha só para dizer o quanto você é importante para mim. Foi feita também com a música que a gente mais escutava juntos no começo.<br /> <br />
-        A gente se conheceu em abril, há quase 3 meses apenas. Você me capturou sem querer, nos demos bem desde a primeira interação, e todos aqueles dias em que ficávamos conversando sem parar e ouvindo música o dia inteiro ficarão para sempre em minha memória, gostaria de revivê-los um dia, se possível.<br />
-        É, eu sei que sou bem emocionado, já que em 1 semana aconteceu aquilo com meu coração, mas não pude evitar, e te mostrei que era real, porém errei muito, não é?<br />
-        Nesses quase 3 meses, ao mesmo tempo em que eu te conquistava, eu te perdia, e eu entendo agora. Eu ainda não desisti de você, no entanto, não vou te sufocar mais. Quero que livre, escolha sentir novamente o que eu um dia te fiz sentir. E sei que palavras não querem dizer nada sem atos, eu sei disso. No entanto, permita-me dizer mais uma apenas.<br /> <br />
-        Tudo em você me inspira. Você me faz, como ninguém um dia me fez, querer ser alguém digno da minha idade, me faz querer lutar finalmente, sem viver mais a vida em vão. Obrigado.<br /> <br />
-        Eu admiro sua força, sua resiliência, sua maturidade (me faz sentir até vergonha por eu ser mais velho e menos maduro). Admiro sua maneira de pensar, e ainda amis seu jeito sério e ao mesmo tempo mantendo sua jovialidade, como uma menininha ainda.<br />
-        Você é uma mulher extraordinária, é meu bem mesmo, porque sem você, fico mal. Porém não posso permitir a mim mesmo te fazer mal mais. Não é uma despedida, é só uma declaração de que não vou mais te sufocar. Ainda quero que seja você o meu futuro, ainda quero que minha vida seja ao seu lado. Sempre vou querer. <br /> <br />
-      </p>  
+        Eu fiz mais esta cartinha só para dizer o quanto você é importante para mim. Foi feita também com a música que a
+        gente mais escutava juntos no começo.<br /> <br />
+        A gente se conheceu em abril, há quase 3 meses apenas. Você me capturou sem querer, nos demos bem desde a
+        primeira interação, e todos aqueles dias em que ficávamos conversando sem parar e ouvindo música o dia inteiro
+        ficarão para sempre em minha memória, gostaria de revivê-los um dia, se possível.<br />
+        É, eu sei que sou bem emocionado, já que em 1 semana aconteceu aquilo com meu coração, mas não pude evitar, e te
+        mostrei que era real, porém errei muito, não é?<br />
+        Nesses quase 3 meses, ao mesmo tempo em que eu te conquistava, eu te perdia, e eu entendo agora. Eu ainda não
+        desisti de você, no entanto, não vou te sufocar mais. Quero que livre, escolha sentir novamente o que eu um dia
+        te fiz sentir. E sei que palavras não querem dizer nada sem atos, eu sei disso. No entanto, permita-me dizer
+        mais uma apenas.<br /> <br />
+        Tudo em você me inspira. Você me faz, como ninguém um dia me fez, querer ser alguém digno da minha idade, me faz
+        querer lutar finalmente, sem viver mais a vida em vão. Obrigado.<br /> <br />
+        Eu admiro sua força, sua resiliência, sua maturidade (me faz sentir até vergonha por eu ser mais velho e menos
+        maduro). Admiro sua maneira de pensar, e ainda amis seu jeito sério e ao mesmo tempo mantendo sua jovialidade,
+        como uma menininha ainda.<br />
+        Você é uma mulher extraordinária, é meu bem mesmo, porque sem você, fico mal. Porém não posso permitir a mim
+        mesmo te fazer mal mais. Não é uma despedida, é só uma declaração de que não vou mais te sufocar. Ainda quero
+        que seja você o meu futuro, ainda quero que minha vida seja ao seu lado. Sempre vou querer. <br /> <br />
+      </p>
       <p class="signature">
         PS.: Ainda vou te chamar de "meu bem" e "princesa", e às vezes ainda de "deusa", ok?<br /> <br />
         Com amor, para sempre seu Ikko</p>
